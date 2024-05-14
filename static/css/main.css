@@ -1,0 +1,60 @@
+body {
+    font-family: "Mochiy Pop P One";
+    background-color:  #E5E5E5;
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 15rem;
+    padding: 1.2rem;
+    border-radius: 20%;
+}
+
+label {
+    margin: 1.4rem 1.4rem;
+}
+
+#remove_items {
+    
+    color: #302B29;
+    padding: 2rem;
+}
+
+#add_btn {
+    background-color: #01A88A;
+    color: white;
+    font-weight: 700;
+    border-radius: 1.4rem;
+    border: 2px solid white;
+    margin: 0.6rem;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+}
+
+#remove_btn{ 
+    background-color: rgb(88, 88, 88);
+    color: #ffffff;
+    font-weight: 700;
+    border-radius: 1.4rem;
+    border: 2px solid #000;
+    margin: 0.6rem;
+    padding: 0.6rem 1rem;   
+}
+
+select {
+    font-family: "Raleway", sans-serif;
+    font-size: 0.85em;
+    text-align: center;
+    width: 10.5rem;
+    margin: 0.4rem 0.6rem;
+    padding: 0.2rem 0;
+    border: 2px solid darkgray;
+}
+
+#add_btn:hover{
+    background-color: darkslategray;
+}

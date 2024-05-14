@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grocery List</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css')}}">
+    
+    <!-- JavaScript file -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/main.js')}}"></script>
+    
+    <!-- Logo -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static',filename='images/logo/apple-touch-icon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static',filename='images/logo/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static',filename='images/logo/favicon-16x16.png')}}">
+    <link rel="manifest" href="{{ url_for('static',filename='images/logo/site.webmanifest')}}">
+    
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Logo -->
+    <div>
+        <img src="../static/images/logo.png" alt="Grocery List Logo">
+    </div>
+
+    <!-- Remove items -->
+    <div id="remove_items">
+        <form action="/remove_items" method="POST">
+            {% for item in shopping_items %}
+            <input type="checkbox" name="check" id="{{item}}" value="{{item}}" onchange="check_me('{{ item }}')">
+            <label for="{{item}}" name="{{item}}">{{ item }}</label> <br>
+            {% endfor %}
+            <input type="submit" value="CHECK ITEMS" id="remove_btn">
+        </form>
+    </div>
+    <!-- Add items -->
+    <div id="add_item">
+        <form action="/add_items" method="POST">
+            <select name="select_items" id="">
+                {% for item in all_items%}
+                <option value="{{item}}">{{ item }}</option>
+                {% endfor %} 
+                <input type="submit" value="ADD ITEM" id="add_btn">
+            </select>
+        </form>
+    </div>
+</body>
+
+</html>
